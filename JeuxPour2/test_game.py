@@ -2,6 +2,8 @@ import pytest
 from Alumettes_humain_vs_humain import victoire
 from Morpion_H_vs_H import est_gagnant, Match_nul
 
+[pytest]
+norecursedirs = main.py
 
 # TEST - devinette victoire
 def test_victoire_true():
