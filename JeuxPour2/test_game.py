@@ -2,8 +2,9 @@ import pytest
 from Alumettes_humain_vs_humain import victoire
 from Morpion_H_vs_H import est_gagnant, Match_nul
 
-
-# TEST - devinette victoire
+# ---------------------------------------------------------
+# TEST 1 — victoire() : ARRANGE / ACT / ASSERT
+# ---------------------------------------------------------
 def test_victoire_true():
     # Arrange
     val_principal = 3
@@ -14,6 +15,7 @@ def test_victoire_true():
 
     # Assert
     assert result is True
+
 
 def test_victoire_false():
     # Arrange
@@ -26,7 +28,10 @@ def test_victoire_false():
     # Assert
     assert result is False
 
-# TEST - morpion gagnant
+
+# ---------------------------------------------------------
+# TEST 2 — est_gagnant() : ARRANGE / ACT / ASSERT
+# ---------------------------------------------------------
 def test_est_gagnant_line_win():
     # Arrange
     tab = [
@@ -40,6 +45,7 @@ def test_est_gagnant_line_win():
 
     # Assert
     assert result == 1
+
 
 def test_est_gagnant_no_win():
     # Arrange
@@ -55,7 +61,10 @@ def test_est_gagnant_no_win():
     # Assert
     assert result != 1
 
-# TEST - morpion Match nul
+
+# ---------------------------------------------------------
+# TEST 3 — Match_nul() : ARRANGE / ACT / ASSERT
+# ---------------------------------------------------------
 def test_match_nul_true():
     # Arrange
     tab = [
@@ -69,6 +78,7 @@ def test_match_nul_true():
 
     # Assert
     assert result == 1
+
 
 def test_match_nul_false():
     # Arrange
