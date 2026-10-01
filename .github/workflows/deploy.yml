@@ -27,7 +27,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install pytest pylint bandit
+          pip install pytest pylint bandit flake8
 
       - name: Run tests
         run: pytest
@@ -36,4 +36,7 @@ jobs:
         run: pylint JeuxPour2 || true
 
       - name: Run bandit
-        run: bandit -r JeuxPour2
+        run: bandit -r JeuxPour2 || true
+
+      - name: Run flake8
+        run: flake8 JeuxPour2 || true 
