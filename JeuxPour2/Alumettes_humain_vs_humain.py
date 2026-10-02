@@ -1,6 +1,5 @@
-
 # def controller un nombre
-def controller(val : int, borneMin : int, borneMax : int ):
+def controller(val: int, borneMin: int, borneMax: int ):
     """Procédure permettant de verifier si un nombre est bien entre sa borne min et sa borne max
 
     Args:
@@ -16,7 +15,8 @@ def controller(val : int, borneMin : int, borneMax : int ):
 
     return val
 # def savoir si victoire
-def victoire(val_principal : int, nombre : int)-> bool:
+
+def victoire(val_principal: int, nombre: int)-> bool:
     """C'est une fonction permettant de savoir si une variable est infèrieure ou égal à zero
 
     Args:
@@ -37,7 +37,8 @@ def victoire(val_principal : int, nombre : int)-> bool:
     
     return verif
 # def pemettan de lancer le jeu
-def jeu_Alumettes(joueur1 : str, joueur2 : str, score_j1 : int, score_j2: int)-> str:
+
+def jeu_Alumettes(joueur1: str, joueur2: str, score_j1: int, score_j2: int)-> str:
     """Procédure permettant de lancer le jeu des Alumettes
     """
     # Initialisation des variables
@@ -56,37 +57,35 @@ def jeu_Alumettes(joueur1 : str, joueur2 : str, score_j1 : int, score_j2: int)->
             choix_joueur1 = int(input("combien d'allumettes voulez-vous retirer : "))
             controller(choix_joueur1,1,3)       # appelle a la fonction controller
             # controlle si le joueur 2 à gagner 
-            if victoire(allumettes, choix_joueur1) == True:     # appel a la fonction victoire
+            if victoire(allumettes, choix_joueur1) == True: # appel a la fonction victoire
                 print("")
-                print(joueur2,"à GAGNER !!!")
+                print(joueur2, "à GAGNER !!!")
                 score_j2 = score_j2 + 1
                 allumettes = 0
                 return joueur2
             # Affiche le nombre d'alumettes restante
-            else :
+            else:
                 allumettes = allumettes - choix_joueur1
-                print("Il reste :",allumettes,"allumettes")
+                print("Il reste :", allumettes, "allumettes")
                 print("")
             player = joueur2
         # tour du joueur 2
         else:
             choix_joueur2 = int(input("combien d'allumettes voulez-vous retirer : "))
-            controller(choix_joueur2,1,3)       # appelle a la fonction controller
+            controller(choix_joueur2, 1, 3)       # appelle a la fonction controller
             # controlle si le joueur 1 à gagner 
             if victoire(allumettes, choix_joueur2) == True: # appel a la fonction victoire
                 print("")
-                print(joueur1,"à GAGNER !!!")
+                print(joueur1, "à GAGNER !!!")
                 score_j1 = score_j1 + 1
                 allumettes = 0
                 return joueur1
             # Affiche le nombre d'alumettes restante
             else:
                 allumettes = allumettes - choix_joueur2
-                print("Il reste :",allumettes,"allumettes")
+                print("Il reste :", allumettes,"allumettes")
                 print("")
             player = joueur1
-    
     print(score_j1, "pour", joueur1)
     print(score_j2, "pour", joueur2)
-    return " Personne "  
-        
+    return " Personne "

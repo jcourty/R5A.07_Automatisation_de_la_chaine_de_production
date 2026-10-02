@@ -1,7 +1,7 @@
 import time 
 import random
 # def controller un nombre
-def controller(val : int, borneMin : int, borneMax : int ):
+def controller(val: int, borneMin: int, borneMax: int ):
     """Procédure permettant de verifier si un nombre est bien entre sa borne min et sa borne max
 
     Args:
@@ -16,8 +16,9 @@ def controller(val : int, borneMin : int, borneMax : int ):
         val = int(input("Saisir une nouvelle valeur : "))
 
     return val
+
 # def savoir si victoire
-def victoire(val_principal : int, nombre : int)-> bool:
+def victoire(val_principal: int, nombre: int)-> bool:
     """C'est une fonction permettant de savoir si une variable est infèrieure ou égal à zero
 
     Args:
@@ -27,7 +28,7 @@ def victoire(val_principal : int, nombre : int)-> bool:
     Returns:
         bool: retourne la vérification pour savoir si la variable est infèrieure ou égal à zero
     """
-    verif : bool
+    verif: bool
     verif = True
     # permet de voir si un joueur a gagner
     val_principal = val_principal - nombre
@@ -37,22 +38,22 @@ def victoire(val_principal : int, nombre : int)-> bool:
         verif = False   # # renvoi la réponse que aucun joueur à gagner
     
     return verif
+
 # def pemettan de lancer le jeu
 def jeu_Alumettes_H_vs_M(joueur : str, score_j : int)-> int:
     """Procédure permettant de lancer le jeu des Alumettes
     """
     # Initialisation des variables
-    allumettes : int
-    player : str
-    choix_joueur : int
-    choix_bot : int
+    allumettes: int
+    player: str
+    choix_joueur: int
+    choix_bot: int
     # Déclarartion des variables
     allumettes = 20
     player = joueur
    
     # Corps du jeu
     while allumettes > 0:
-
         print("au tour du joueur",player,"!")   # permet de savoir quel joueur joue
         # tour du joueur 1
         if player == joueur :
@@ -68,7 +69,7 @@ def jeu_Alumettes_H_vs_M(joueur : str, score_j : int)-> int:
             # Affiche le nombre d'alumettes restante
             else :
                 allumettes = allumettes - choix_joueur
-                print("Il reste :",allumettes,"allumettes")
+                print("Il reste :", allumettes,"allumettes")
                 print("")
             player = "bot"
         # tour du joueur 2
@@ -78,7 +79,7 @@ def jeu_Alumettes_H_vs_M(joueur : str, score_j : int)-> int:
             # controlle si le joueur 1 à gagner 
             if victoire(allumettes, choix_bot) == True:     # appel a la fonction victoire
                 print("")
-                print(player," à PERDU !!!")
+                print(player, " à PERDU !!!")
                 if player == "bot":
                     score_j = score_j + 1
                 allumettes = 0
@@ -86,11 +87,10 @@ def jeu_Alumettes_H_vs_M(joueur : str, score_j : int)-> int:
             else:
                 print("bot à retirer", choix_bot, "alumettes")
                 allumettes = allumettes - choix_bot
-                print("Il reste :",allumettes,"allumettes")
+                print("Il reste :", allumettes, "allumettes")
                 print("")
             player = joueur
     
     # affiche les scores en fin de jeu
     print(score_j, "pour", joueur)
     return score_j
-      
